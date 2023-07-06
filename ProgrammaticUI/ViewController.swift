@@ -19,6 +19,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtonWithAutoLayout()
+        setButtonTarget()
+    }
+
+    private func setButtonTarget() {
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func didTapButton() {
+        self.navigationController?.pushViewController(SecondViewController(), animated: true)
     }
 }
 
