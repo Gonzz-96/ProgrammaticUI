@@ -43,8 +43,18 @@ extension ViewController {
 extension ViewController {
     // frames is a way of placing views, but it's not the recommended one
     func setButtonWithFrames() {
-        button.frame = CGRect(x: 100, y: 300,
-                              width: 120, height: 44)
+        let (x, y, width, height) = getButtonPositionAndDimensions()
+        button.frame = CGRect(x: x, y: y, width: width, height: height)
         self.view.addSubview(button)
+    }
+
+    private func getButtonPositionAndDimensions() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
+        let screenSize = self.view.frame.size
+        let screenCenterX = screenSize.width / 2.0
+        let screenCenterY = screenSize.height / 2.0
+        let buttonWidth = 120.0
+        let buttonHeight = 44.0
+        return (screenCenterX - buttonWidth/2.0, screenCenterY - buttonHeight/2.0,
+                    buttonWidth, buttonHeight)
     }
 }
