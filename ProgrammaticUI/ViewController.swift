@@ -30,6 +30,11 @@ extension ViewController {
         self.view.addSubview(button)
 
         NSLayoutConstraint.activate([
+            // other constrains
+//            button.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 60),
+//            button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -60),
+//            button.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+//            button.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
 
